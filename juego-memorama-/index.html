@@ -1,0 +1,137 @@
+<!doctype html>
+
+<html lang="es">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1,shrink-to-fit=no">
+    <meta name="description" content="Jugar memorama en línea">
+    <title>Memorama con JavaScript, Bootstrap y Vue.JS</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css"
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+        integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/js/bootstrap.min.js"
+        integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+        crossorigin="anonymous"></script>
+    <link href="./css/style.css" rel="stylesheet">
+</head>
+
+<body>
+<div class="contenedor">
+    <h1 class="text-center">Memorama (Vegetales)</h1>
+    <p style="text-align:center ;">
+
+        <button class="btn btn-danger" type="button" data-toggle="collapse" data-target="#collapseExample"
+            aria-expanded="false" aria-controls="collapseExample">
+            Instrucciones de Juego
+        </button>
+        <button class="btn btn-success" type="button" data-toggle="collapse" data-target="#CollapseExample"
+            aria-expanded="false" aria-controls="CollapseExample">Beneficios de los Vegetales</button>
+           
+            <a href="../juego-memorama-/home.html" class="btn btn-primary">Mas Juegos</a>
+
+
+    </p>
+    <div class="collapse" id="collapseExample">
+        <div class="card card-body">
+            <p style="font-weight:bold ;">INSTRUCCIONES :</p>
+
+            - Este juego de que se presenta tiene las siguientes reglas de juego:
+            <br>
+            - En tu turno puedes levantar dos cartas:
+            <ul>
+                <li>Si dichas cartas no son iguales entonces deberás volver elegir un par similar
+                <li>
+                    Si ves que las dos cartas son iguales entonces ya tienes un par, y puedes hasta seguir hasta que te
+                    equivoques.
+            </ul>
+            - Intentos máximos es de 8 intentos
+            <br>
+            - El juego debe continuar hasta que se acaben todas las cartas que están boca abajo.
+            </p>
+        </div>
+    </div>
+
+    <div class="collapse " id="CollapseExample">
+        <div class="card card-body">
+            <p style="font-weight:bold ;">Beneficios de los Vegetales:</p>
+            <h7>Los vegetales otorgan beneficios al
+                organismo que no están ni bien valorados ni aceptados;
+                cumplen funciones de limpieza pues son maravillosos
+                antioxidantes y otros tienen funciones diuréticas,
+                que colaboran eliminando toxinas y manteniendo
+                saludable a su organismo.</h7>
+        </div>
+    </div>
+    </div>
+
+    <hr>
+    <!-- botones abajo  -->
+    <!-- <p style="text-align: center;">
+            <a class="btn btn-danger" data-toggle="collapse" href="#multiCollapseExample1" role="button" aria-expanded="false" aria-controls="multiCollapseExample1">Instrucciones de Juego </a>
+            <button class="btn btn-success" type="button" data-toggle="collapse" data-target="#multiCollapseExample2" aria-expanded="false" aria-controls="multiCollapseExample2">Beneficios de los Vegetales</button>
+          
+        </p>
+          <div class="row">
+            <div class="col">
+              <div class="collapse multi-collapse" id="multiCollapseExample1">
+                <div class="card card-body">
+                    <p style="font-weight:bold ;">INSTRUCCIONES :</p>
+                
+                    -  Este juego de   que se presenta tiene las siguientes reglas de juego:
+                   <br>
+                   -   En tu turno puedes levantar dos cartas:
+                   <ul>
+                       <li>Si dichas cartas no son iguales entonces deberás  volver elegir un par similar 
+                       <li>
+                           Si ves que las dos cartas son iguales entonces ya tienes un par,  y puedes hasta seguir  hasta que te equivoques.
+                   </ul> 
+                   -   Intentos máximos es de 8 intentos 
+                   <br>
+                   -   El juego debe continuar hasta que se acaben todas las cartas que están boca abajo.
+                      </p>                </div>
+              </div>
+            </div>
+          
+          </div> -->
+    <main role="main" class="container-fluid" id="app">
+
+        <div class="row">
+            <div class="col-12">
+                <p>
+                    <span class="h5">Intentos: </span>
+                    {{intentos}}/{{MAXIMOS_INTENTOS}}&nbsp;<span class="h5">Aciertos:
+                    </span> {{aciertos}}
+                    <!-- <br><a @click="mostrarCreditos" href="#">Acerca de</a> -->
+                </p>
+            </div>
+        </div>
+        <div v-for="(fila, indiceFila) in memorama" :key="indiceFila" class="row">
+            <div :key="indiceFila+''+indiceImagen" class="col-3" v-for="(imagen, indiceImagen) in fila">
+                <div class="mb-2">
+                    <img @click="voltear(indiceFila, indiceImagen)" :class="{'girar': imagen.mostrar}" :src="(imagen.mostrar ? imagen.ruta :
+                            NOMBRE_IMAGEN_OCULTA)" class="card-img-top img-fluid
+                            img-thumbnail">
+                </div>
+            </div>
+
+        </div>
+
+    </main>
+
+</div>
+    
+    <script src="./js/sweetalert2.all.min.js"></script>
+    <script src="./js/vue.min.js"></script>
+    <script src="./js/script.js"></script>
+
+
+    
+</body>
+
+</html>
