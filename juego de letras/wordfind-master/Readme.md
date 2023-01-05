@@ -2,7 +2,6 @@ _Wordfind_ is a simple `javascript` library for generating (hopefully fun) word 
 
 The core `wordfind.js` library contains no dependencies and will work both in the browser and in node.js.  The repository also includes a fully functional word find game (aptly called `wordfindgame.js`) as an example. The game has a dependency on `jQuery`.
 
-Check out the sample game at http://bunkat.github.com/wordfind/example/index.html.
 
 ## Basic Browser Example
     

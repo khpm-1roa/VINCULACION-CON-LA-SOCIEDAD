@@ -1,10 +1,4 @@
-/**
-* Wordfind.js 0.0.1
-* (c) 2012 Bill, BunKat LLC.
-* Wordfind is freely distributable under the MIT license.
-* For all details and documentation:
-*     http://github.com/bunkat/wordfind
-*/
+
 
 (function () {
 
