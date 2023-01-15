@@ -89,10 +89,14 @@ a {
     padding-bottom: 10px;
     padding-left: 20px;
     padding-right: 20px;
-    background-color: #79fbff;
+    background-color: #5feaff;
     border-color: #d8d8d8;
     border-width: 3px;
     border-style: solid;
     border-radius: 35px;
 
+}
+
+.juego{
+    text-align: center;
 }
