@@ -1,8 +1,8 @@
 body {
     /*Para la barra inferior fija*/
     padding-bottom: 30px;
-    background-size: cover;
-    background-image: url(https://img.wallpapersafari.com/desktop/1680/1050/54/33/ZDykC5.jpg);
+    background-size:cover;
+    background-image: url(../img/imgHome/solIA.jpg);
   }
   .contenedor{
     /* position: relative; left: 10px;  */
@@ -11,6 +11,7 @@ body {
   }
   h1{
     font-family: 'Times New Roman', Times, serif;
+    color: #FFF;
     text-align: center;
     font-size: larger;
     size: 15px;

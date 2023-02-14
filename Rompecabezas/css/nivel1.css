@@ -1,8 +1,11 @@
 body {
     font-family: Arial, Verdana, sans-serif;
-    background-image: url(https://img.wallpapersafari.com/desktop/1680/1050/54/33/ZDykC5.jpg);
+    background-image: url(../recursos/cir_fondos.jpg);
     background-size: cover;
 
+}
+.div-1 {
+    background-color: #ffffff;
 }
 
 #piezas {
@@ -52,7 +55,7 @@ body {
 }
 
 .ganaste {
-    background-image: url(https://th.bing.com/th/id/R.6ce207bef5e3b5427cf8836da5b1cb46?rik=Yzjh5XQX8V3G%2bw&pid=ImgRaw&r=0);
+    background-image: url(../recursos/cir_fondos.jpg);
 
 }
 
